@@ -2,6 +2,7 @@ public class Doctor {
 
     //Atributos
     static int id = 0;
+    String email;
     String name;
     String speciality;
 
