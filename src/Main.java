@@ -17,15 +17,9 @@ public class Main {
             System.out.println(availableAppointment.getDate() + " " + availableAppointment.getTime());
         }
 
-        System.out.println(myDoctor.getAvailableAppointment());
+         Patient patient = new Patient("Andres", "dandres123123@gmail.com");
 
-//        Patient patient = new Patient("Andres", "dandres123123@gmail.com");
-//        patient.setWeight(100);
-//        System.out.println(patient.getWeight());
-//
-//        patient.setPhoneNumber("12345678");
-//        System.out.println(patient.getPhoneNumber());
-
+        System.out.println(patient);
     }
 
 }
