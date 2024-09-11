@@ -5,24 +5,24 @@ public class Doctor {
     String name;
     String speciality;
 
-    Doctor(){
+    Doctor() {
         System.out.println("Construyendo el Objeto Doctor");
     }
 
-    Doctor(String name, String speciality){
+    Doctor(String name, String speciality) {
         System.out.println("El nombre del doctor asignado es : " + name);
-        id ++;
+        id++;
         this.name = name;
         this.speciality = speciality;
     }
 
     //Comportamientos
-    public void showName(){
+    public void showName() {
         System.out.printf(name);
     }
 
-    public void showId(){
-        System.out.println("ID Doctor: " +id);
+    public void showId() {
+        System.out.println("ID Doctor: " + id);
     }
 
 }
