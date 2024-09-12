@@ -39,6 +39,12 @@ public class Doctor extends User {
         return super.toString() +"\n Speciality: " + speciality + "\n Available: " +availableAppointment.toString();
     }
 
+    @Override
+    public void showDataUser() {
+        System.out.println("Empleado del Hospital: Cruz Roja");
+        System.out.println("Departamento: oncología");
+    }
+
     public static class AvailableAppointment{
         private int id;
         private Date date;
