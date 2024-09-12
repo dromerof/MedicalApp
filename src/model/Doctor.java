@@ -1,5 +1,7 @@
 package model;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -26,11 +28,14 @@ public class Doctor extends User {
 
     //Comportamientos
     ArrayList<AvailableAppointment>availableAppointment = new ArrayList<>();
-    public void addAvailableAppointment(Date date, String time){
+    public void addAvailableAppointment(String date, String time){
+
+
+
         availableAppointment.add(new Doctor.AvailableAppointment(date, time));
     }
 
-    public ArrayList<AvailableAppointment> getAvailableAppointment(){
+    public ArrayList<AvailableAppointment> getAvailableAppointments(){
         return availableAppointment;
     }
 
@@ -49,9 +54,14 @@ public class Doctor extends User {
         private int id;
         private Date date;
         private String time;
+        SimpleDateFormat format = new SimpleDateFormat("dd/mm/yyyy");
 
-        public AvailableAppointment(Date date, String time) {
-            this.date = date;
+        public AvailableAppointment(String date, String time) {
+            try {
+                this.date = format.parse(date);
+            } catch (ParseException e) {
+                throw new RuntimeException(e);
+            }
             this.time = time;
         }
 
@@ -63,8 +73,8 @@ public class Doctor extends User {
             this.id = id;
         }
 
-        public Date getDate() {
-            return date;
+        public String getDate(String DATE) {
+            return format.format(date);
         }
 
         public void setDate(Date date) {
